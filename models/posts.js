@@ -1,9 +1,11 @@
 var mongoose = require("mongoose");
  
 var postSchema = new mongoose.Schema({
-   name: String,
+   title: String,
    image: String,
+   link: String,
    description: String,
+   createdDate: { type: Date, default: Date.now },
    author: {
       id: {
          type: mongoose.Schema.Types.ObjectId,

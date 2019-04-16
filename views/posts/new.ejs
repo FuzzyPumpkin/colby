@@ -6,13 +6,16 @@
         <div style="width: 30%; margin: 30px auto;">
             <form method="POST" action="/posts">
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="post name" name="name">
+                    <input class="form-control" type="text" placeholder="post title" name="title">
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" placeholder="image URL" name="image">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="post description" name="description">
+                    <input class="form-control" type="text" placeholder="video URL" name="link">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="post text" name="description"></textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-lg btn-primary btn-block">Submit</button>

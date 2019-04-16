@@ -19,14 +19,15 @@ router.get("/posts/new", middle.isLoggedIn, function(req, res){
 
 //create
 router.post("/posts", middle.isLoggedIn, function(req, res){
-   var name = req.body.name;
+   var title = req.body.title;
    var image = req.body.image;
+   var link = req.body.link;
    var description = req.body.description;
    var author = {
       id: req.user._id,
       username: req.user.username
    };
-   var newPost = {name: name, image: image, description: description, author: author};
+   var newPost = {title: title, image: image, link: link, description: description, author: author};
    Post.create(newPost, function(err, addedPost){
       if(err){console.log(err);}
       else{res.redirect("/posts");}
@@ -58,7 +59,6 @@ router.put("/posts/:id", middle.checkOwnership, function(req, res){
        if(err){
            res.redirect("/posts");
        } else {
-           //redirect somewhere(show page)
            res.redirect("/posts/" + req.params.id);
        }
     });
