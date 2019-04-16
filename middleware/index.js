@@ -1,15 +1,15 @@
-var Campground = require("../models/campgrounds");
+var Posts = require("../models/posts");
 var Comment = require("../models/comments");
 
 var middlewareObj = {};
 
 middlewareObj.checkOwnership = function(req, res, next) {
  if(req.isAuthenticated()){
-        Campground.findById(req.params.id, function(err, foundCampground){
+        Posts.findById(req.params.id, function(err, foundPost){
            if(err){
                res.redirect("back");
            }  else {
-            if(foundCampground.author.id.equals(req.user._id)) {
+            if(foundPost.author.id.equals(req.user._id)) {
                 next();
             } else {
                 res.redirect("back");

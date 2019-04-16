@@ -6,15 +6,17 @@ var express        = require("express"),
     flash          = require("connect-flash"),
     passport       = require("passport"),
     localStrategy  = require("passport-local"),
-    Campground     = require("./models/campgrounds.js"),
+    Posts     = require("./models/posts.js"),
     Comment        = require("./models/comments.js"),
     User           = require("./models/users.js"),
-    campRoutes     = require("./routes/campgrounds"),
+    postRoutes     = require("./routes/posts"),
     authRoutes     = require("./routes/index"),
     commentRoutes  = require("./routes/comments");
     
-    
+//local db, for work to production level, production db in comment
 mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true});
+// mongoose.connect("mongodb+srv://kari:colby@cluster0-z1udv.mongodb.net/colby?retryWrites=true");
+
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -45,7 +47,7 @@ app.use(function(req, res, next){
 
 //routes
 app.use(authRoutes);
-app.use(campRoutes);
+app.use(postRoutes);
 app.use(commentRoutes);
 
 //landing page
