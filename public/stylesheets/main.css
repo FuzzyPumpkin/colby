@@ -4,3 +4,30 @@
 .deleteForm {
     display: inline;
 }
+.bggreen {
+    background-color: #544B41;
+}
+nav a {
+    color: white;
+}
+nav a:hover {
+    color: #5E2C2B;
+    text-decoration: none;
+}
+.topPad {
+    margin-top: 5em;
+}
+body {
+    background-color: #E4E4DD;
+}
+.card {
+    border: 2px solid #5E2C2B;
+}
+.infoBtn {
+    background-color: #C6BFBB;
+}
+.infoBtn a {
+    background-color: #5E2C2B;
+    color: white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.6), 0 2px 2px 0 rgba(0, 0, 0, 0.6);
+}

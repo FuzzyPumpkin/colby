@@ -4,25 +4,34 @@
 
 <div class="container">
 
-<header class="jumbotron">
-    <div class="container">
-        <h1>Welcome to YelpCamp</h1>
-        <p>We feature posts from all over the world.</p>
-        <p><a class="btn btn-lg btn-primary" href="/posts/new">Add a new post</a></p>
-    </div>
-</header>
-
-
-<div class="row text-center" style="display: flex; flex-wrap: wrap;">
-    <% posts.forEach(function(post){ %>
-        <div class="col-md-3 col-sm-6"> 
-        <!--This should use a card in BS4-->
-            <div class="thumbnail"><img src="<%= post.image %>"></div>
-            <div class="caption"><h4><%= post.name %></h4></div>
-            <p><a href="/posts/<%= post._id %>" class="btn btn-primary">More Info</a></p>
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Colby's Critiques</h1>
+            <p>You play video thing. I watch video thing. FUN!</p>
         </div>
-    <% }); %>
-</div>
+    </header>
+
+    <div class="container">
+    <div class="row text-center">
+        <% posts.forEach(function(post){ %>
+            <div class="col-lg-3 col-m-6"> 
+            <!--This should use a card in BS4-->
+                <div class="card mb-3">
+                    <img src="<%= post.image %>" class="card-img-top" alt="video thumbnail">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= post.title %></h5>
+                            <p class="card-text"><%- post.description.substring(0, 54) %>...</p>
+                        </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item infoBtn">
+                            <a href="/posts/<%= post._id %>" class="btn btn-sm">More Info</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    </div>
 
 </div>
 <% include ../partials/footer %>
