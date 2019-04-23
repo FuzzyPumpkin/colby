@@ -1,9 +1,19 @@
 <% include ./partials/header %>
+
+<div class="container">
+<h1>Register</h1>
+
 <form action="/register" method="POST">
-    <input type="text" name="username" placeholder="username">
-    <input type="password" name="password" placeholder="password">
-    <button>Register</button>
+    <div class="container">
+            <div class="row">
+            <div class="form-group container col-md-6">
+                <input class="form-control mb-2" type="text" name="username" placeholder="username">
+                <input class="form-control mb-2" type="password" name="password" placeholder="password">
+                <button class="btn btn-info">Register</button>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </div>
 </form>
-
-
+</div>
 <% include ./partials/footer %>
