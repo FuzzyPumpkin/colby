@@ -6,7 +6,7 @@ var User = require("../models/users.js");
 
 //root route
 router.get("/", function(req, res){
-    res.render("landing");
+    res.redirect("/posts/");
 });
 
 // show register form

@@ -14,7 +14,13 @@ router.get("/posts", function(req, res){
 
 //new
 router.get("/posts/new", middle.isLoggedIn, function(req, res){
-   res.render("posts/new");
+   if(req.user.username == "Colby"){
+      res.render("posts/new");
+      
+   }
+   else {
+      res.render("sekkrit");
+   }
 });
 
 //create

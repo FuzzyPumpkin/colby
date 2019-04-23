@@ -56,6 +56,10 @@ app.get("/", function(req, res){
    res.render("landing");
 });
 
+//secret page
+app.get("/sekkrit", function(req, res){
+   res.render("sekkrit");
+});
 
 //server start
 app.listen(process.env.PORT, process.env.IP, function(){
