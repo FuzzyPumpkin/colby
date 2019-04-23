@@ -14,8 +14,8 @@ var express        = require("express"),
     commentRoutes  = require("./routes/comments");
     
 //local db, for work to production level, production db in comment
-mongoose.connect("mongodb://localhost:27017/colby", {useNewUrlParser: true});
-// mongoose.connect("mongodb+srv://kari:colby@cluster0-z1udv.mongodb.net/colby?retryWrites=true");
+// mongoose.connect("mongodb://localhost:27017/colby", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://kari:colby@cluster0-z1udv.mongodb.net/colby?retryWrites=true");
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
